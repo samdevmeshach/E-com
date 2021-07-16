@@ -1,0 +1,15 @@
+.Card{
+    img{
+        max-width: 200px;
+        max-height: 200px;
+        height: 200px;
+        width: 200px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 50%;
+    }
+}
+.card:hover{
+    box-shadow: 0 0 10px skyblue;
+    cursor: pointer;
+}
