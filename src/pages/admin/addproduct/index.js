@@ -1,14 +1,14 @@
 import React,{useState,useEffect} from 'react'
-import {isAuthenticated} from '../../api/auth'
-import {createProduct,getCategories} from '../../api/apiAdmin'
+import {isAuthenticated} from '../../../api/auth'
+import {createProduct,getCategories} from '../../../api/apiAdmin'
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import Alert from "@material-ui/lab/Alert";
 import Snackbar from "@material-ui/core/Snackbar";
 import {Link} from "react-router-dom";
-import SideBar from '../../component/admin/sidebar'
-import Header from '../../component/header';
+import SideBar from '../../../component/admin/sidebar'
+import Header from '../../../component/header';
 
 const useStyles = makeStyles((theme) => ({
     backdrop: {
@@ -135,7 +135,7 @@ const init = () => {
 
     const newProduct =() => (
         <div>
-            <form className="mb-3 mt-3" onSubmit={clickSubmit}>
+            <form className="mb-3" onSubmit={clickSubmit}>
                 <h4>Photo</h4>
                 <div className="form-group">
                     <label className="btn btn-primary">

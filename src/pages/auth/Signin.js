@@ -7,8 +7,8 @@ import { userData } from '../../redux/action'
 const Signin = ({userData}) => {
 
         const [values,setValues] = useState({
-            email:'sa@gmail.com',
-            password:'sa@123',
+            email:'admin@gmail.com',
+            password:'admin123',
             error:'',
             loading:false,
             redirectToreferrer:false,

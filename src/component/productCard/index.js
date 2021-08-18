@@ -1,14 +1,14 @@
 import React from "react";
-import "./style.scss";
 import {withRouter} from 'react-router-dom'
 import API from "../../config";
-const Card = ({ title, url, item,history }) => {
+const ProductCard = ({ title, url, item,history }) => {
 
   const productPage = () => {
     history.push(`/product/${item._id}`);
 }
   return (
-    <div class="col Card">
+    <>
+    <div class="col col-lg-6 Card">
       <div class="card shadow-md">
         <img
           src={`${API}/${url}/photo/${item._id}`}
@@ -22,9 +22,6 @@ const Card = ({ title, url, item,history }) => {
           </p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-              <button type="button" class="btn btn-sm btn-outline-secondary" onClick={productPage}>
-                View
-              </button>
               <button type="button" class="btn btn-sm btn-outline-secondary">
                 Add to Cart
               </button>
@@ -34,7 +31,11 @@ const Card = ({ title, url, item,history }) => {
         </div>
       </div>
     </div>
+    <div class="col col-md-6 Card">
+      <h2>{item.description}</h2>
+    </div>
+    </>
   );
 };
 
-export default withRouter(Card);
+export default withRouter(ProductCard);

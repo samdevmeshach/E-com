@@ -1,11 +1,11 @@
 import React from "react";
-import { isAuthenticated } from "../../api/auth";
-import {Link} from 'react-router-dom'
-import './style.scss'
-const Header = () => {
+import { isAuthenticated,signout } from "../../api/auth";
+import { Link,withRouter } from "react-router-dom";
+import "./style.scss";
+const Header = ({history}) => {
   return (
     <div className="Nabbar">
-      <header className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <header className="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
         <Link className="navbar-brand col-md-3 col-lg-2 me-0 px-3" to="/">
           Sam
         </Link>
@@ -29,18 +29,26 @@ const Header = () => {
         <div className="navbar-nav">
           <div className="nav-item text-nowrap">
             {isAuthenticated() ? (
-              <Link className="nav-link px-3" href="signout">
-              Sign out
-            </Link>
-            ): (<Link className="nav-link px-3" to="/signin">
-            Sign In
-          </Link>) }
-            
+              <Link
+                className="nav-link px-3"
+                onClick={() =>
+                  signout(() => {
+                    history.push("/");
+                  })
+                }
+              >
+                Sign out
+              </Link>
+            ) : (
+              <Link className="nav-link px-3" to="/signin">
+                Sign In
+              </Link>
+            )}
           </div>
         </div>
       </header>
     </div>
   );
-}
+};
 
-export default Header;
+export default withRouter(Header);

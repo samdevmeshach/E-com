@@ -7,30 +7,33 @@ export const data = [
       icon:   <Icon.Home className="mx-2" size={15} />
     },
     {
-      title: 'Product',
-      path: '/addproduct',
+      title: 'Products',
+      path: '/products',
       icon:  <Icon.File className="mx-2" size={15} />,
+      cName: 'nav-text'
+    },
+    {
+      title: 'Add Product',
+      path: '/addproduct',
+      icon:  <Icon.FilePlus className="mx-2" size={15} />,
+      cName: 'nav-text'
+    },
+    {
+      title: 'Categories',
+      path: '/categories',
+      icon:  <Icon.File className="mx-2" size={15} />,
+      cName: 'nav-text'
+    },
+    {
+      title: 'Add Category',
+      path: '/addcategory',
+      icon:  <Icon.FilePlus className="mx-2" size={15} />,
       cName: 'nav-text'
     },
     {
       title: 'Order',
       path: '/order',
       icon:   <Icon.ShoppingCart className="mx-2" size={15} />
-    },
-    {
-      title: 'Customers',
-      path: '/customers',
-      icon:  <Icon.Users className="mx-2" size={15} />
-    },
-    {
-      title: 'Report',
-      path: '/report',
-      icon:   <Icon.BarChart2 className="mx-2" size={15} />
-    },
-    {
-      title: 'Integrations',
-      path: '/integration',
-      icon: <Icon.Layers className="mx-2" size={15} />
     }
   ];
   

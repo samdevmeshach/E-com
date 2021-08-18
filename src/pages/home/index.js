@@ -10,7 +10,6 @@ const Home = ({sold,createdAt}) => {
     const productCreatedAt = useSelector(state => state.data.productCreatedAt);
     useEffect(() => {
         sold("sold")
-        createdAt("createdAt")
       },[])
     return (
         <div>
@@ -19,17 +18,15 @@ const Home = ({sold,createdAt}) => {
             <main className="col-md-12 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               <div class="container">
-                  <h1>
-                        Top Selling
-                  </h1>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
-              {productSold.map((data,i) => {
-                  return(<Card title={data.name} item={data} url="product" />);
+                <div class="row row-cols-2 row-cols-sm-2 row-cols-lg-3 g-3">
+              { productSold.map((data,i) => {
+                  return(<Card title={data.name} key={i} item={data} url="product" />);
               })}
                 </div>
               </div>
             </div>
-          </main><main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+          </main>
+          {/* <main className="col-md-12 ms-sm-auto col-lg-10 px-md-4">
             <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
               <div class="container">
                   <h1>
@@ -42,7 +39,7 @@ const Home = ({sold,createdAt}) => {
                 </div>
               </div>
             </div>
-          </main>
+          </main> */}
         </div>
     )
 }

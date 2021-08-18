@@ -2,7 +2,6 @@ import API from '../config'
 import queryString from 'querystring'
 
 export const getProducts = (sortBy) => {
-    console.log(API)
     return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=8`, {
         method :"GET",
     })
@@ -32,7 +31,7 @@ export const getFilteredProducts = (skip,limit,filters = {}) => {
         skip,
         filters
     }
-
+    console.log(data)
     return fetch(`${API}/products/by/search`, {
         method :"POST",
         headers:{
@@ -100,6 +99,18 @@ export const createOrder = (userId,token,orderData) => {
         body: JSON.stringify({order: orderData})
         })
         .then(response => {
+            return response.json();
+        })
+        .catch(err => {
+            console.log(err)
+        })
+}
+
+export const allProducts = () => {
+    return fetch(`${API}/allproducts`, {
+        method :"GET",
+    })
+        .then(response =>{
             return response.json();
         })
         .catch(err => {

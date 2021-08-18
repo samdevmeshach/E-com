@@ -101,3 +101,34 @@ export const updateOrderStatus = (userId,token,orderId,status) => {
             console.log(err)
         })
 }
+
+export const deleteProduct = (userId, token,productId) => {
+    return fetch(`${API}/product/${productId}/${userId}`, {
+        method :"DELETE",
+        headers:{
+            Accept:'application/json',
+            Authorization:`Bearer ${token}`
+        },
+    })
+    .then(response =>{
+        return response.json();
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+export const deleteCategory = (userId, token,productId) => {
+    return fetch(`${API}/category/${productId}/${userId}`, {
+        method :"DELETE",
+        headers:{
+            Accept:'application/json',
+            Authorization:`Bearer ${token}`
+        },
+    })
+    .then(response =>{
+        return response.json();
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}

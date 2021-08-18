@@ -4,7 +4,9 @@ const INITIAL_STATE = {
     productSold:[],
     productCreatedAt:[],
     userData:[],
-    category:[]
+    category:[],
+    relatedProduc:[],
+    products:[]
 }
 
 const shopReducer = (state = INITIAL_STATE,action) => {
@@ -20,6 +22,15 @@ const shopReducer = (state = INITIAL_STATE,action) => {
             return state;
         case actionTypes.GET_CATEGORY:
             state.category = action.payload;
+            return state;
+        case actionTypes.GET_FILTER:
+            state.productSold = action.payload;
+            return state;
+        case actionTypes.RELATED_PRODUCT:
+            state.relatedProduc = action.payload;
+            return state;
+        case actionTypes.ALL_PRODUCTS:
+            state.products = action.payload;
             return state;
         default:
             return state;
